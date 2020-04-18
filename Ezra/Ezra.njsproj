@@ -38,7 +38,7 @@
     <Content Include="views\index.pug" />
     <Content Include="views\layout.pug" />
     <Content Include="views\error.pug" />
-    <Content Include="wwwroot\home.html">
+    <Content Include="wwwroot\index.html">
       <SubType>Code</SubType>
     </Content>
   </ItemGroup>
