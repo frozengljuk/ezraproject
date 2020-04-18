@@ -5,6 +5,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+var nodemailer = require('nodemailer');
 var db = require("./database.js");
 
 var app = express();
@@ -25,6 +26,45 @@ app.get("/", (req, res, next) => {
 
 app.get("/index", (req, res, next) => {
     res.redirect('/index.html')
+});
+
+app.get("/email", (req, res, next) => {
+    var content = req.query.content;
+
+    try {
+        // https://myaccount.google.com/lesssecureapps
+        var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            host: 'smtp.gmail.com',
+            port: 587,
+            secure: false,
+            requireTLS: true,
+            auth: {
+                user: 'denis.skornyakov@gmail.com',
+                pass: '12345'
+            }
+        });
+
+        var mailOptions = {
+            from: 'denis.skornyakov@gmail.com',
+            to: 'dr.fel@mail.ru',
+            subject: 'Sending Email using Node.js',
+            text: content
+        };
+
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+        res.end(content);
+    }
+    catch (error) {
+        console.log(error);
+        res.end(error);
+    }
 });
 
 app.get("/api/users", (req, res, next) => {
