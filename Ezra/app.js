@@ -5,6 +5,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+var db = require("./database.js");
 
 var app = express();
 
@@ -24,6 +25,21 @@ app.get("/", (req, res, next) => {
 
 app.get("/index", (req, res, next) => {
     res.redirect('/index.html')
+});
+
+app.get("/api/users", (req, res, next) => {
+    var sql = "select * from user"
+    var params = []
+    db.all(sql, params, (err, rows) => {
+        if (err) {
+            res.status(400).json({ "error": err.message });
+            return;
+        }
+        res.json({
+            "message": "success",
+            "data": rows
+        })
+    });
 });
 
 // catch 404 and forward to error handler
