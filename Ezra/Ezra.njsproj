@@ -35,12 +35,49 @@
     </Content>
     <Content Include="package.json" />
     <Content Include="public\stylesheets\main.css" />
+    <Content Include="wwwroot\qwerty_files\accordion.js" />
+    <Content Include="wwwroot\qwerty_files\all.css" />
+    <Content Include="wwwroot\qwerty_files\animate.css" />
+    <Content Include="wwwroot\qwerty_files\ap-parallax-style.css" />
+    <Content Include="wwwroot\qwerty_files\bootstrap-front.css" />
+    <Content Include="wwwroot\qwerty_files\bootstrap.js" />
+    <Content Include="wwwroot\qwerty_files\css.css" />
+    <Content Include="wwwroot\qwerty_files\custom.js" />
+    <Content Include="wwwroot\qwerty_files\font-awesome.css" />
+    <Content Include="wwwroot\qwerty_files\font-awesome_002.css" />
+    <Content Include="wwwroot\qwerty_files\formidableforms.css" />
+    <Content Include="wwwroot\qwerty_files\isotope.js" />
+    <Content Include="wwwroot\qwerty_files\jarallax.js" />
+    <Content Include="wwwroot\qwerty_files\jquery-migrate.js" />
+    <Content Include="wwwroot\qwerty_files\jquery.js" />
+    <Content Include="wwwroot\qwerty_files\jquery_002.js" />
+    <Content Include="wwwroot\qwerty_files\jquery_003.js" />
+    <Content Include="wwwroot\qwerty_files\jquery_004.js" />
+    <Content Include="wwwroot\qwerty_files\jquery_005.js" />
+    <Content Include="wwwroot\qwerty_files\jquery_006.js" />
+    <Content Include="wwwroot\qwerty_files\nivo-lightbox.css" />
+    <Content Include="wwwroot\qwerty_files\nivo-lightbox.js" />
+    <Content Include="wwwroot\qwerty_files\responsive.css" />
+    <Content Include="wwwroot\qwerty_files\slick.css" />
+    <Content Include="wwwroot\qwerty_files\slick.js" />
+    <Content Include="wwwroot\qwerty_files\style.css" />
+    <Content Include="wwwroot\qwerty_files\style_002.css" />
+    <Content Include="wwwroot\qwerty_files\style_003.css" />
+    <Content Include="wwwroot\qwerty_files\theme.css" />
+    <Content Include="wwwroot\qwerty_files\v4-shims.css" />
+    <Content Include="wwwroot\qwerty_files\waypoint.js" />
+    <Content Include="wwwroot\qwerty_files\WhatsApp-Image-2020-01-13-at-07.jpg" />
+    <Content Include="wwwroot\qwerty_files\WhatsApp-Image-2020-01-13-at-13.jpg" />
+    <Content Include="wwwroot\qwerty_files\WhatsApp-Image-2020-01-13-at-13_002.jpg" />
+    <Content Include="wwwroot\qwerty_files\wp-embed.js" />
+    <Content Include="wwwroot\qwerty_files\wp-emoji-release.js" />
     <Content Include="README.md" />
     <Content Include="wwwroot\index.html">
       <SubType>Code</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="wwwroot\qwerty_files\" />
     <Folder Include="wwwroot\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
