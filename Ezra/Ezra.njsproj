@@ -44,6 +44,9 @@
     <Content Include="views\layout.pug">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="wwwroot\form.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="wwwroot\index_res\accordion.js" />
     <Content Include="wwwroot\index_res\all.css" />
     <Content Include="wwwroot\index_res\animate.css" />

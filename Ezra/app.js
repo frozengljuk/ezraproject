@@ -7,8 +7,9 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 var db = require("./database.js");
+const { check, validationResult } = require('express-validator');
 
-var routes = require('./routes/add');
+//var routes = require('./routes/add');
 
 var app = express();
 
@@ -23,10 +24,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'wwwroot')));
 
-app.use('/data', routes);
+//app.use('/data', routes);
 
 app.get("/index", (req, res, next) => {
     res.redirect('/index.html')
+});
+
+app.post('/fruite', [
+    check('fruite').isEmail()//,
+    //check('password').isLength({ min: 5 })
+], (req, res) => {
+    // Finds the validation errors in this request and wraps them in an object with handy functions
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(422).json({ errors: errors.array() });
+    }
+    req.end('ok\n');
 });
 
 app.post("/lid", (req, res, next) => {
@@ -37,10 +50,39 @@ app.post("/lid", (req, res, next) => {
     // email
     // city
     // is_jewrut 
-    var content = req.body.content;
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end(content);
+
+    var errors = []
+    if (!req.body.password) {
+        errors.push("No password specified");
+    }
+    if (!req.body.email) {
+        errors.push("No email specified");
+    }
+    if (errors.length) {
+        res.status(400).json({ "error": errors.join(",") });
+        return;
+    }
+
+    var data = {
+        name: req.body.name,
+        email: req.body.email,
+        password: md5(req.body.password)
+    }
+
+    var sql = 'INSERT INTO user (name, email, password) VALUES (?,?,?)'
+    var params = [data.name, data.email, data.password]
+    db.run(sql, params, function (err, result) {
+        if (err) {
+            res.status(400).json({ "error": err.message })
+            return;
+        }
+        res.json({
+            "message": "success",
+            "data": data,
+            "id": this.lastID
+        })
+    });
+
 });
 
 app.get("/email", (req, res, next) => {
