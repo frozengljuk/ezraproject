@@ -24,10 +24,6 @@ app.use(express.static(path.join(__dirname, 'wwwroot')));
 
 app.use('/data', routes);
 
-//app.get("/", (req, res, next) => {
-//    res.redirect('/index.html')
-//});
-
 app.get("/index", (req, res, next) => {
     res.redirect('/index.html')
 });
