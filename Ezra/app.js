@@ -8,9 +8,12 @@ var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 //var db = require("./database.js");
 
+var routes = require('./routes/add');
+
 var app = express();
 
-
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
@@ -19,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'wwwroot')));
 
+app.use('/data', routes);
 
 //app.get("/", (req, res, next) => {
 //    res.redirect('/index.html')

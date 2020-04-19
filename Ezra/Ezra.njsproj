@@ -35,6 +35,15 @@
     </Content>
     <Content Include="package.json" />
     <Content Include="public\stylesheets\main.css" />
+    <Content Include="routes\add.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\error.pug">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\layout.pug">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="wwwroot\qwerty_files\accordion.js" />
     <Content Include="wwwroot\qwerty_files\all.css" />
     <Content Include="wwwroot\qwerty_files\animate.css" />
@@ -77,6 +86,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="views\" />
+    <Folder Include="routes\" />
     <Folder Include="wwwroot\qwerty_files\" />
     <Folder Include="wwwroot\" />
     <Folder Include="public\" />
