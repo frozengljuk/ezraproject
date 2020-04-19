@@ -6,7 +6,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
-//var db = require("./database.js");
+var db = require("./database.js");
 
 var routes = require('./routes/add');
 
@@ -29,44 +29,61 @@ app.get("/index", (req, res, next) => {
     res.redirect('/index.html')
 });
 
-//app.get("/email", (req, res, next) => {
-//    var content = req.query.content;
+app.post("/lid", (req, res, next) => {
+    // first_name
+    // second_name
+    // birth_date
+    // phone_number
+    // email
+    // city
+    // is_jewrut 
+    var content = req.body.content;
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end(content);
+});
 
-//    try {
-//        // https://myaccount.google.com/lesssecureapps
-//        var transporter = nodemailer.createTransport({
-//            service: 'gmail',
-//            host: 'smtp.gmail.com',
-//            port: 587,
-//            secure: false,
-//            requireTLS: true,
-//            auth: {
-//                user: 'denis.skornyakov@gmail.com',
-//                pass: '12345'
-//            }
-//        });
+app.get("/email", (req, res, next) => {
+    // /email?content=text
+    var content = req.query.content;
 
-//        var mailOptions = {
-//            from: 'denis.skornyakov@gmail.com',
-//            to: 'dr.fel@mail.ru',
-//            subject: 'Sending Email using Node.js',
-//            text: content
-//        };
+    try {
+        // https://myaccount.google.com/lesssecureapps
+        var client = nodemailer.createTransport({
+            service: 'gmail',
+            host: 'smtp.gmail.com',
+            port: 587,
+            secure: false,
+            requireTLS: true,
+            auth: {
+                user: 'denis.skornyakov@gmail.com',
+                pass: '12345'
+            }
+        });
 
-//        transporter.sendMail(mailOptions, function (error, info) {
-//            if (error) {
-//                console.log(error);
-//            } else {
-//                console.log('Email sent: ' + info.response);
-//            }
-//        });
-//        res.end(content);
-//    }
-//    catch (error) {
-//        console.log(error);
-//        res.end(error);
-//    }
-//});
+        var email = {
+            from: 'denis.skornyakov@gmail.com',
+            to: 'dr.fel@mail.ru',
+            subject: 'Sending Email using Node.js',
+            text: content
+        };
+
+        client.sendMail(email, function (error, info) {
+            if (error) {
+                console.log(error);
+                //res.end(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+                res.end('Email sent: ' + info.response);
+            }
+        });
+    }
+    catch (error) {
+        console.log(error);
+        res.end(error);
+    }
+
+});
 
 //app.get("/api/users", (req, res, next) => {
 //    var sql = "select * from user"

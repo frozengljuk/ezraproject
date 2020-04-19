@@ -1,35 +1,37 @@
 var sqlite3 = require('sqlite3').verbose()
-var md5 = require('md5')
 
-const DBSOURCE = "database.sqlite"
+const filename = "database.sqlite"
 
-let db = new sqlite3.Database(DBSOURCE, (err) => {
-    if (err) {
+let database = new sqlite3.Database(filename, (connectionError) => {
+    if (connectionError) {
         // Cannot open database
-        console.error(err.message);
-        throw err;
+        console.error(connectionError.message);
+        throw connectionError;
     }
     else {
         console.log('Connected to the SQLite database.')
-        db.run(`CREATE TABLE user (
+        database.run(`CREATE TABLE lid (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name text, 
-            email text UNIQUE, 
-            password text, 
-            CONSTRAINT email_unique UNIQUE (email)
+            first_name text,
+            second_name text,
+            birth_date text,
+            phone_number text,
+            email text,
+            city text,
+            is_jewrut INTEGER
             )`,
-            (err) => {
-                if (err) {
+            (createTableError) => {
+                if (createTableError) {
                     // Table already created
                 } else {
                     // Table just created, creating some rows
-                    var insert = 'INSERT INTO user (name, email, password) VALUES (?,?,?)'
-                    db.run(insert, ["admin", "admin@example.com", md5("admin123456")])
-                    db.run(insert, ["user", "user@example.com", md5("user123456")])
+                    //var insert = 'INSERT INTO lid (name, email, password) VALUES (?,?,?)'
+                    //database.run(insert, ["admin", "admin@example.com", md5("admin123456")])
+                    //database.run(insert, ["user", "user@example.com", md5("user123456")])
                 }
             });
     }
 });
 
 
-module.exports = db
+module.exports = database
