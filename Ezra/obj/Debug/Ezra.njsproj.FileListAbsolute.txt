@@ -1,0 +1,6 @@
+C:\Users\Sandbox\source\Ezra\Ezra\obj\Debug\Ezra.njsprojAssemblyReference.cache
+C:\Users\Sandbox\source\Ezra\Ezra\obj\Debug\Ezra.njsproj.CoreCompileInputs.cache
+C:\Users\Sandbox\source\Ezra\Ezra\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\lina\source\repos\ezraproject\Ezra\obj\Debug\Ezra.njsprojAssemblyReference.cache
+C:\Users\lina\source\repos\ezraproject\Ezra\obj\Debug\Ezra.njsproj.CoreCompileInputs.cache
+C:\Users\lina\source\repos\ezraproject\Ezra\bin\Microsoft.NodejsTools.WebRole.dll
