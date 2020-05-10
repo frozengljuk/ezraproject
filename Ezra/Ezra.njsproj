@@ -44,54 +44,11 @@
     <Content Include="views\layout.pug">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="wwwroot\form.html">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="wwwroot\index_res\accordion.js" />
-    <Content Include="wwwroot\index_res\all.css" />
-    <Content Include="wwwroot\index_res\animate.css" />
-    <Content Include="wwwroot\index_res\ap-parallax-style.css" />
-    <Content Include="wwwroot\index_res\bootstrap-front.css" />
-    <Content Include="wwwroot\index_res\bootstrap.js" />
-    <Content Include="wwwroot\index_res\css.css" />
-    <Content Include="wwwroot\index_res\custom.js" />
-    <Content Include="wwwroot\index_res\font-awesome.css" />
-    <Content Include="wwwroot\index_res\font-awesome_002.css" />
-    <Content Include="wwwroot\index_res\formidableforms.css" />
-    <Content Include="wwwroot\index_res\isotope.js" />
-    <Content Include="wwwroot\index_res\jarallax.js" />
-    <Content Include="wwwroot\index_res\jquery-migrate.js" />
-    <Content Include="wwwroot\index_res\jquery.js" />
-    <Content Include="wwwroot\index_res\jquery_002.js" />
-    <Content Include="wwwroot\index_res\jquery_003.js" />
-    <Content Include="wwwroot\index_res\jquery_004.js" />
-    <Content Include="wwwroot\index_res\jquery_005.js" />
-    <Content Include="wwwroot\index_res\jquery_006.js" />
-    <Content Include="wwwroot\index_res\nivo-lightbox.css" />
-    <Content Include="wwwroot\index_res\nivo-lightbox.js" />
-    <Content Include="wwwroot\index_res\responsive.css" />
-    <Content Include="wwwroot\index_res\slick.css" />
-    <Content Include="wwwroot\index_res\slick.js" />
-    <Content Include="wwwroot\index_res\style.css" />
-    <Content Include="wwwroot\index_res\style_002.css" />
-    <Content Include="wwwroot\index_res\style_003.css" />
-    <Content Include="wwwroot\index_res\theme.css" />
-    <Content Include="wwwroot\index_res\v4-shims.css" />
-    <Content Include="wwwroot\index_res\waypoint.js" />
-    <Content Include="wwwroot\index_res\WhatsApp-Image-2020-01-13-at-07.jpg" />
-    <Content Include="wwwroot\index_res\WhatsApp-Image-2020-01-13-at-13.jpg" />
-    <Content Include="wwwroot\index_res\WhatsApp-Image-2020-01-13-at-13_002.jpg" />
-    <Content Include="wwwroot\index_res\wp-embed.js" />
-    <Content Include="wwwroot\index_res\wp-emoji-release.js" />
     <Content Include="README.md" />
-    <Content Include="wwwroot\index.html">
-      <SubType>Code</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="views\" />
     <Folder Include="routes\" />
-    <Folder Include="wwwroot\index_res\" />
     <Folder Include="wwwroot\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
