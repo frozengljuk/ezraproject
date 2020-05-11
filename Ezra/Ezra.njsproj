@@ -114,7 +114,7 @@
     <Content Include="wwwroot\wp-includes\js\jquery\jquery4a5f.js" />
     <Content Include="wwwroot\wp-includes\js\wp-embed.min1852.js" />
     <Content Include="wwwroot\wp-includes\wlwmanifest.xml" />
-    <Content Include="wwwroot\xmlrpc.php" />
+    <Content Include="wwwroot\PostRequestOnly.php" />
     <Content Include="wwwroot\xmlrpc0db0.php" />
   </ItemGroup>
   <ItemGroup>
