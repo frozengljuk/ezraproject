@@ -49,16 +49,10 @@
     <Content Include="wwwroot\index2c35.json" />
     <Content Include="wwwroot\contacts.html" />
     <Content Include="wwwroot\faq.html" />
-    <Content Include="wwwroot\filehasmoved1.html" />
     <Content Include="wwwroot\index4116.json" />
     <Content Include="wwwroot\index52f0.json" />
-    <Content Include="wwwroot\filehasmoved2.html" />
     <Content Include="wwwroot\about_us.html" />
     <Content Include="wwwroot\index9cc5.json" />
-    <Content Include="wwwroot\_dontknowxml_1.html" />
-    <Content Include="wwwroot\filehasmoved4.html" />
-    <Content Include="wwwroot\_dontknowxml.html" />
-    <Content Include="wwwroot\filehasmoved3.html" />
     <Content Include="wwwroot\registration.html" />
     <Content Include="wwwroot\indexf465.json" />
     <Content Include="wwwroot\wp-content\plugins\formidable\css\formidableforms2436.css" />
@@ -108,8 +102,6 @@
     <Content Include="wwwroot\wp-includes\js\jquery\jquery4a5f.js" />
     <Content Include="wwwroot\wp-includes\js\wp-embed.min1852.js" />
     <Content Include="wwwroot\wp-includes\wlwmanifest.xml" />
-    <Content Include="wwwroot\PostRequestOnly.php" />
-    <Content Include="wwwroot\to_delete.php" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="views\" />
