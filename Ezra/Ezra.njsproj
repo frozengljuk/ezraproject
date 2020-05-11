@@ -88,7 +88,7 @@
     <Content Include="wwwroot\wp-content\themes\graphy\js\functions1455.js" />
     <Content Include="wwwroot\wp-content\themes\graphy\js\navigationdf90.js" />
     <Content Include="wwwroot\wp-content\themes\graphy\js\skip-link-focus-fixdf90.js" />
-    <Content Include="wwwroot\wp-content\themes\graphy\stylea1ec.css" />
+    <Content Include="wwwroot\wp-content\themes\graphy\main_style.css" />
     <Content Include="wwwroot\uploads\2020\01\cropped-logo2-1-180x180.jpg" />
     <Content Include="wwwroot\uploads\2020\01\cropped-logo2-1-192x192.jpg" />
     <Content Include="wwwroot\uploads\2020\01\cropped-logo2-1-32x32.jpg" />
