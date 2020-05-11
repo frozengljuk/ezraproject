@@ -1,0 +1,17 @@
+[
+  {
+    "outputFileName": "wwwroot/bundle.css",
+    "inputFiles": [
+      "public/stylesheets/main.css",
+      "wwwroot/plugins/formidable/css/formidableforms2436.css",
+      "wwwroot/plugins/responsive-accordion-and-collapse/css/font-awesome/css/font-awesome.min1852.css",
+      "wwwroot/plugins/responsive-accordion-and-collapse/css/bootstrap-front1852.css",
+      "wwwroot/plugins/wpforms-lite/assets/css/wpforms-full82fc.css",
+      "wwwroot/wp-content/themes/graphy/css/normalize0235.css",
+      "wwwroot/wp-content/themes/graphy/genericons/genericons/genericons.css",
+      "wwwroot/wp-content/themes/graphy/genericons/genericons5589.css",
+      "wwwroot/wp-content/themes/graphy/main_style.css",
+      "wwwroot/wp-includes/css/dist/block-library/style.min1852.css"
+    ]
+  }
+]

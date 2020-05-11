@@ -30,11 +30,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.js" />
+    <None Include="bundleconfig.json" />
     <Content Include="database.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="package.json" />
-    <Content Include="public\stylesheets\main.css" />
     <Content Include="routes\add.js">
       <SubType>Code</SubType>
     </Content>
@@ -45,19 +45,17 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="README.md" />
+    <Content Include="wwwroot\bundle.css" />
     <Content Include="wwwroot\index.html" />
     <Content Include="wwwroot\contacts.html" />
     <Content Include="wwwroot\faq.html" />
     <Content Include="wwwroot\about_us.html" />
     <Content Include="wwwroot\registration.html" />
-    <Content Include="wwwroot\plugins\formidable\css\formidableforms2436.css" />
     <Content Include="wwwroot\plugins\formidable\fonts\s11-fpbea6.svg" />
     <Content Include="wwwroot\plugins\formidable\fonts\s11-fpbea6.ttf" />
     <Content Include="wwwroot\plugins\formidable\fonts\s11-fpbea6.woff" />
     <Content Include="wwwroot\plugins\formidable\images\ajax_loader.gif" />
     <Content Include="wwwroot\plugins\formidable\js\frm.min6dce.js" />
-    <Content Include="wwwroot\plugins\responsive-accordion-and-collapse\css\bootstrap-front1852.css" />
-    <Content Include="wwwroot\plugins\responsive-accordion-and-collapse\css\font-awesome\css\font-awesome.min1852.css" />
     <Content Include="wwwroot\plugins\responsive-accordion-and-collapse\css\font-awesome\fonts\fontawesome-webfont862f.eot" />
     <Content Include="wwwroot\plugins\responsive-accordion-and-collapse\css\font-awesome\fonts\fontawesome-webfont862f.svg" />
     <Content Include="wwwroot\plugins\responsive-accordion-and-collapse\css\font-awesome\fonts\fontawesome-webfont862f.ttf" />
@@ -66,13 +64,9 @@
     <Content Include="wwwroot\plugins\responsive-accordion-and-collapse\img\style-soft.png" />
     <Content Include="wwwroot\plugins\responsive-accordion-and-collapse\js\accordion1852.js" />
     <Content Include="wwwroot\plugins\responsive-accordion-and-collapse\js\bootstrap1852.js" />
-    <Content Include="wwwroot\plugins\wpforms-lite\assets\css\wpforms-full82fc.css" />
     <Content Include="wwwroot\plugins\wpforms-lite\assets\js\jquery.validate.minb3a6.js" />
     <Content Include="wwwroot\plugins\wpforms-lite\assets\js\mailcheck.mincfa9.js" />
     <Content Include="wwwroot\plugins\wpforms-lite\assets\js\wpforms82fc.js" />
-    <Content Include="wwwroot\wp-content\themes\graphy\css\normalize0235.css" />
-    <Content Include="wwwroot\wp-content\themes\graphy\genericons\genericons5589.css" />
-    <Content Include="wwwroot\wp-content\themes\graphy\genericons\genericons\genericons.css" />
     <Content Include="wwwroot\wp-content\themes\graphy\genericons\genericons\Genericons.eot" />
     <Content Include="wwwroot\wp-content\themes\graphy\genericons\genericons\Genericons.svg" />
     <Content Include="wwwroot\wp-content\themes\graphy\genericons\genericons\Genericons.ttf" />
@@ -83,7 +77,6 @@
     <Content Include="wwwroot\wp-content\themes\graphy\js\functions1455.js" />
     <Content Include="wwwroot\wp-content\themes\graphy\js\navigationdf90.js" />
     <Content Include="wwwroot\wp-content\themes\graphy\js\skip-link-focus-fixdf90.js" />
-    <Content Include="wwwroot\wp-content\themes\graphy\main_style.css" />
     <Content Include="wwwroot\uploads\2020\01\cropped-logo2-1-180x180.jpg" />
     <Content Include="wwwroot\uploads\2020\01\cropped-logo2-1-192x192.jpg" />
     <Content Include="wwwroot\uploads\2020\01\cropped-logo2-1-32x32.jpg" />
@@ -92,7 +85,6 @@
     <Content Include="wwwroot\uploads\2020\01\WhatsApp-Image-2020-01-13-at-07.53.10-1.jpg" />
     <Content Include="wwwroot\uploads\2020\01\WhatsApp-Image-2020-01-13-at-13.40.18.jpg" />
     <Content Include="wwwroot\uploads\2020\01\WhatsApp-Image-2020-01-13-at-13.40.34-1024x398.jpg" />
-    <Content Include="wwwroot\wp-includes\css\dist\block-library\style.min1852.css" />
     <Content Include="wwwroot\wp-includes\js\jquery\jquery-migrate.min330a.js" />
     <Content Include="wwwroot\wp-includes\js\jquery\jquery4a5f.js" />
     <Content Include="wwwroot\wp-includes\js\wp-embed.min1852.js" />
