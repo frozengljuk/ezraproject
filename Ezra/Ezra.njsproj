@@ -115,7 +115,7 @@
     <Content Include="wwwroot\wp-includes\js\wp-embed.min1852.js" />
     <Content Include="wwwroot\wp-includes\wlwmanifest.xml" />
     <Content Include="wwwroot\PostRequestOnly.php" />
-    <Content Include="wwwroot\xmlrpc0db0.php" />
+    <Content Include="wwwroot\to_delete.php" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="views\" />
