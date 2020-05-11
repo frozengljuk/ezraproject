@@ -46,15 +46,10 @@
     </Content>
     <Content Include="README.md" />
     <Content Include="wwwroot\index.html" />
-    <Content Include="wwwroot\index2c35.json" />
     <Content Include="wwwroot\contacts.html" />
     <Content Include="wwwroot\faq.html" />
-    <Content Include="wwwroot\index4116.json" />
-    <Content Include="wwwroot\index52f0.json" />
     <Content Include="wwwroot\about_us.html" />
-    <Content Include="wwwroot\index9cc5.json" />
     <Content Include="wwwroot\registration.html" />
-    <Content Include="wwwroot\indexf465.json" />
     <Content Include="wwwroot\plugins\formidable\css\formidableforms2436.css" />
     <Content Include="wwwroot\plugins\formidable\fonts\s11-fpbea6.svg" />
     <Content Include="wwwroot\plugins\formidable\fonts\s11-fpbea6.ttf" />
