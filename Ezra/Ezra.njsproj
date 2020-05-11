@@ -46,7 +46,6 @@
     </Content>
     <Content Include="README.md" />
     <Content Include="wwwroot\index.html" />
-    <Content Include="wwwroot\index01ed.json" />
     <Content Include="wwwroot\_index0ecf.php" />
     <Content Include="wwwroot\index2c35.json" />
     <Content Include="wwwroot\contacts.html" />
