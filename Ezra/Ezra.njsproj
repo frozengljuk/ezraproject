@@ -73,10 +73,6 @@
     <Content Include="wwwroot\wp-content\themes\graphy\genericons\genericons\Genericonsd41d.eot" />
     <Content Include="wwwroot\wp-content\themes\graphy\images\line.png" />
     <Content Include="wwwroot\wp-content\themes\graphy\images\search-icon.png" />
-    <Content Include="wwwroot\wp-content\themes\graphy\js\doubletaptogo.min8a54.js" />
-    <Content Include="wwwroot\wp-content\themes\graphy\js\functions1455.js" />
-    <Content Include="wwwroot\wp-content\themes\graphy\js\navigationdf90.js" />
-    <Content Include="wwwroot\wp-content\themes\graphy\js\skip-link-focus-fixdf90.js" />
     <Content Include="wwwroot\uploads\2020\01\cropped-logo2-1-180x180.jpg" />
     <Content Include="wwwroot\uploads\2020\01\cropped-logo2-1-192x192.jpg" />
     <Content Include="wwwroot\uploads\2020\01\cropped-logo2-1-32x32.jpg" />
@@ -122,7 +118,6 @@
     <Folder Include="wwwroot\wp-content\themes\graphy\genericons\" />
     <Folder Include="wwwroot\wp-content\themes\graphy\genericons\genericons\" />
     <Folder Include="wwwroot\wp-content\themes\graphy\images\" />
-    <Folder Include="wwwroot\wp-content\themes\graphy\js\" />
     <Folder Include="wwwroot\uploads\" />
     <Folder Include="wwwroot\uploads\2020\" />
     <Folder Include="wwwroot\uploads\2020\01\" />
