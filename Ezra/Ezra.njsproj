@@ -46,22 +46,17 @@
     </Content>
     <Content Include="README.md" />
     <Content Include="wwwroot\index.html" />
-    <Content Include="wwwroot\_index0ecf.php" />
     <Content Include="wwwroot\index2c35.json" />
     <Content Include="wwwroot\contacts.html" />
-    <Content Include="wwwroot\_index3a2c.php" />
     <Content Include="wwwroot\faq.html" />
     <Content Include="wwwroot\filehasmoved1.html" />
     <Content Include="wwwroot\index4116.json" />
-    <Content Include="wwwroot\_index4eeb.php" />
     <Content Include="wwwroot\index52f0.json" />
     <Content Include="wwwroot\filehasmoved2.html" />
-    <Content Include="wwwroot\_index6b3f.php" />
     <Content Include="wwwroot\about_us.html" />
     <Content Include="wwwroot\index9cc5.json" />
     <Content Include="wwwroot\_dontknowxml_1.html" />
     <Content Include="wwwroot\filehasmoved4.html" />
-    <Content Include="wwwroot\_indexc1e3.php" />
     <Content Include="wwwroot\_dontknowxml.html" />
     <Content Include="wwwroot\filehasmoved3.html" />
     <Content Include="wwwroot\registration.html" />
