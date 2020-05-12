@@ -45,6 +45,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="README.md" />
+    <Content Include="wwwroot\bootstrap.min.css" />
     <Content Include="wwwroot\bundle.css" />
     <Content Include="wwwroot\index.html" />
     <Content Include="wwwroot\contacts.html" />
