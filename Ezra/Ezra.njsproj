@@ -69,8 +69,14 @@
     <Content Include="wwwroot\plugins\wpforms-lite\assets\js\jquery.validate.minb3a6.js" />
     <Content Include="wwwroot\plugins\wpforms-lite\assets\js\mailcheck.mincfa9.js" />
     <Content Include="wwwroot\plugins\wpforms-lite\assets\js\wpforms82fc.js" />
+    <Content Include="wwwroot\cardtry.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="wwwroot\uploads\2020\01\404.png" />
     <Content Include="wwwroot\uploads\2020\01\head.jpg" />
+    <Content Include="wwwroot\uploads\2020\01\marina.jpg" />
+    <Content Include="wwwroot\uploads\2020\01\nastya.jpg" />
+    <Content Include="wwwroot\uploads\2020\01\tanya.jpg" />
     <Content Include="wwwroot\wp-content\themes\graphy\genericons\genericons\Genericons.eot" />
     <Content Include="wwwroot\wp-content\themes\graphy\genericons\genericons\Genericons.svg" />
     <Content Include="wwwroot\wp-content\themes\graphy\genericons\genericons\Genericons.ttf" />
