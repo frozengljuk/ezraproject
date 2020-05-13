@@ -45,6 +45,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="README.md" />
+    <Content Include="wwwroot\404.html" />
     <Content Include="wwwroot\bootstrap.min.css" />
     <Content Include="wwwroot\bundle.css" />
     <Content Include="wwwroot\index.html" />
@@ -68,6 +69,8 @@
     <Content Include="wwwroot\plugins\wpforms-lite\assets\js\jquery.validate.minb3a6.js" />
     <Content Include="wwwroot\plugins\wpforms-lite\assets\js\mailcheck.mincfa9.js" />
     <Content Include="wwwroot\plugins\wpforms-lite\assets\js\wpforms82fc.js" />
+    <Content Include="wwwroot\uploads\2020\01\404.png" />
+    <Content Include="wwwroot\uploads\2020\01\head.jpg" />
     <Content Include="wwwroot\wp-content\themes\graphy\genericons\genericons\Genericons.eot" />
     <Content Include="wwwroot\wp-content\themes\graphy\genericons\genericons\Genericons.svg" />
     <Content Include="wwwroot\wp-content\themes\graphy\genericons\genericons\Genericons.ttf" />
