@@ -14,6 +14,12 @@ a {
     display: none;
 }
 
+.center-img-404 {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
 .hovergallery img {
     -webkit-transform: scale(0.9); /*Webkit: уменьшаем размер до 0.8*/
     -moz-transform: scale(0.9); /*Mozilla: масштабирование*/
