@@ -43,9 +43,9 @@ margin: 4% 4% 0 4%;
 	background-size: 90%;
 	border: 1px solid #a62425;
 	border-radius: 10px;
-	opacity: 0.8;"
-      -webkit-transition: -webkit-transform 0.3s;
-          transition: transform 0.3s;
+	opacity: 0.8;
+     -webkit-transition: -webkit-transform 0.3s;
+     transition: transform 0.3s;
 }
 
 .card__back {

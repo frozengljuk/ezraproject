@@ -209,7 +209,8 @@ img.emoji {
 															Год рождения
 															<span class="frm_required"></span>
 														</label>
-														<input type="number" id="field_4ebr" name="item_meta[7]" value="" data-invmsg="Number is invalid" min="1987" max="2004" step="any" />
+														<input type="number" id="field_4ebr" onkeydown="javascript: return event.keyCode === 8 ||
+event.keyCode === 46 ? true : !isNaN(Number(event.key))" name="item_meta[7]" value="number" placeholder="дата рождения" data-invmsg="Number is invalid" min="1987" max="2004" step="any" />
 
 
 													</div>
