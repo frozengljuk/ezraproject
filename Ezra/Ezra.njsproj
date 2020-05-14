@@ -77,6 +77,15 @@
     <Content Include="wwwroot\uploads\2020\01\marina.jpg" />
     <Content Include="wwwroot\uploads\2020\01\nastya.jpg" />
     <Content Include="wwwroot\uploads\2020\01\tanya.jpg" />
+    <Content Include="wwwroot\uploads\flags%402x.png" />
+    <Content Include="wwwroot\uploads\flags.png" />
+    <Content Include="wwwroot\uploads\js-tel\data.js" />
+    <Content Include="wwwroot\uploads\js-tel\data.min.js" />
+    <Content Include="wwwroot\uploads\js-tel\intlTelInput-jquery.js" />
+    <Content Include="wwwroot\uploads\js-tel\intlTelInput-jquery.min.js" />
+    <Content Include="wwwroot\uploads\js-tel\intlTelInput.js" />
+    <Content Include="wwwroot\uploads\js-tel\intlTelInput.min.js" />
+    <Content Include="wwwroot\uploads\js-tel\utils.js" />
     <Content Include="wwwroot\wp-content\themes\graphy\genericons\genericons\Genericons.eot" />
     <Content Include="wwwroot\wp-content\themes\graphy\genericons\genericons\Genericons.svg" />
     <Content Include="wwwroot\wp-content\themes\graphy\genericons\genericons\Genericons.ttf" />
@@ -108,6 +117,7 @@
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
     <Folder Include="public\stylesheets\" />
+    <Folder Include="wwwroot\uploads\js-tel\" />
     <Folder Include="wwwroot\wp-content\" />
     <Folder Include="wwwroot\plugins\" />
     <Folder Include="wwwroot\plugins\formidable\" />

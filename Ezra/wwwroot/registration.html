@@ -2,85 +2,57 @@
 <html lang="ru-RU">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="pingback" href="xmlrpc.php">
-<title>Регистрация &#8212; EzraFSU</title>
-<link rel='dns-prefetch' href='http://vps277519.vps.ovh.ca/' />
-<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
-<link rel='dns-prefetch' href='http://use.fontawesome.com/' />
-<link rel='dns-prefetch' href='http://s.w.org/' />
-<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
-}
-</style>
-<link rel='stylesheet' href='bundle.css' type='text/css' />
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Serif+Pro%3A400%7CLora%3A400%2C400italic%2C700&amp;subset=latin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext' type='text/css' media='all' />
-<link rel='stylesheet' href='../../use.fontawesome.com/releases/v5.12.0/css/all.css' type='text/css' media='all' integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous" />
-<link rel='stylesheet' href='../../use.fontawesome.com/releases/v5.12.0/css/v4-shims.css' type='text/css' media='all' integrity="sha384-AL44/7DEVqkvY9j8IjGLGZgFmHAjuHa+2RIWKxDliMNIfSs9g14/BRpYwHrWQgz6" crossorigin="anonymous" />
-<style id='font-awesome-official-v4shim-inline-css' type='text/css'>
-@font-face {
-    font-family: "FontAwesome";
-    src: url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-brands-400.eot"),
-         url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"),
-         url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-brands-400.woff2") format("woff2"),
-         url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-brands-400.woff") format("woff"),
-         url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-brands-400.ttf") format("truetype"),
-         url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-brands-400.svg#fontawesome") format("svg");
-}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="pingback" href="xmlrpc.php">
+	<title>Регистрация &#8212; EzraFSU</title>
+	<link rel='dns-prefetch' href='http://vps277519.vps.ovh.ca/' />
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+	<link rel='dns-prefetch' href='http://use.fontawesome.com/' />
+	<link rel='dns-prefetch' href='http://s.w.org/' />
+	<link rel='stylesheet' href='bundle.css' type='text/css' />
+	<link rel='stylesheet' href='intlTelInput.min.css' type='text/css' />
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Serif+Pro%3A400%7CLora%3A400%2C400italic%2C700&amp;subset=latin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext' type='text/css' media='all' />
+	<link rel='stylesheet' href='../../use.fontawesome.com/releases/v5.12.0/css/all.css' type='text/css' media='all' integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous" />
+	<link rel='stylesheet' href='../../use.fontawesome.com/releases/v5.12.0/css/v4-shims.css' type='text/css' media='all' integrity="sha384-AL44/7DEVqkvY9j8IjGLGZgFmHAjuHa+2RIWKxDliMNIfSs9g14/BRpYwHrWQgz6" crossorigin="anonymous" />
+	<style id='font-awesome-official-v4shim-inline-css' type='text/css'>
+		@font-face {
+			font-family: "FontAwesome";
+			src: url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-brands-400.eot"), url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-brands-400.woff2") format("woff2"), url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-brands-400.woff") format("woff"), url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-brands-400.ttf") format("truetype"), url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+		}
 
-@font-face {
-    font-family: "FontAwesome";
-    src: url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-solid-900.eot"),
-         url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),
-         url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-solid-900.woff2") format("woff2"),
-         url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-solid-900.woff") format("woff"),
-         url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-solid-900.ttf") format("truetype"),
-         url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-solid-900.svg#fontawesome") format("svg");
-}
+		@font-face {
+			font-family: "FontAwesome";
+			src: url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-solid-900.eot"), url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-solid-900.woff2") format("woff2"), url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-solid-900.woff") format("woff"), url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-solid-900.ttf") format("truetype"), url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+		}
 
-@font-face {
-    font-family: "FontAwesome";
-    src: url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-regular-400.eot"),
-         url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),
-         url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-regular-400.woff2") format("woff2"),
-         url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-regular-400.woff") format("woff"),
-         url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-regular-400.ttf") format("truetype"),
-         url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-regular-400.svg#fontawesome") format("svg");
-    unicode-range: U+F004-F005,U+F007,U+F017,U+F022,U+F024,U+F02E,U+F03E,U+F044,U+F057-F059,U+F06E,U+F070,U+F075,U+F07B-F07C,U+F080,U+F086,U+F089,U+F094,U+F09D,U+F0A0,U+F0A4-F0A7,U+F0C5,U+F0C7-F0C8,U+F0E0,U+F0EB,U+F0F3,U+F0F8,U+F0FE,U+F111,U+F118-F11A,U+F11C,U+F133,U+F144,U+F146,U+F14A,U+F14D-F14E,U+F150-F152,U+F15B-F15C,U+F164-F165,U+F185-F186,U+F191-F192,U+F1AD,U+F1C1-F1C9,U+F1CD,U+F1D8,U+F1E3,U+F1EA,U+F1F6,U+F1F9,U+F20A,U+F247-F249,U+F24D,U+F254-F25B,U+F25D,U+F267,U+F271-F274,U+F279,U+F28B,U+F28D,U+F2B5-F2B6,U+F2B9,U+F2BB,U+F2BD,U+F2C1-F2C2,U+F2D0,U+F2D2,U+F2DC,U+F2ED,U+F328,U+F358-F35B,U+F3A5,U+F3D1,U+F410,U+F4AD;
-}
-</style>
-<script type='text/javascript' src='wp-includes/js/jquery/jquery4a5f.js?ver=1.12.4-wp'></script>
-<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
-<link rel='https://api.w.org/' href='index52f0.json?rest_route=/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 5.3.3" />
-<link rel="canonical" href="registration.html" />
-<link rel='shortlink' href='filehasmoved3.html?p=58' />
-<link rel="alternate" type="application/json+oembed" href="index9cc5.json?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=http%3A%2F%2Fvps277519.vps.ovh.ca%2Fwordpress%2F%3Fpage_id%3D58" />
-<link rel="alternate" type="text/xml+oembed" href="index3a2c.php?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=http%3A%2F%2Fvps277519.vps.ovh.ca%2Fwordpress%2F%3Fpage_id%3D58&amp;format=xml" />
+		@font-face {
+			font-family: "FontAwesome";
+			src: url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-regular-400.eot"), url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-regular-400.woff2") format("woff2"), url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-regular-400.woff") format("woff"), url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-regular-400.ttf") format("truetype"), url("https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-regular-400.svg#fontawesome") format("svg");
+			unicode-range: U+F004-F005,U+F007,U+F017,U+F022,U+F024,U+F02E,U+F03E,U+F044,U+F057-F059,U+F06E,U+F070,U+F075,U+F07B-F07C,U+F080,U+F086,U+F089,U+F094,U+F09D,U+F0A0,U+F0A4-F0A7,U+F0C5,U+F0C7-F0C8,U+F0E0,U+F0EB,U+F0F3,U+F0F8,U+F0FE,U+F111,U+F118-F11A,U+F11C,U+F133,U+F144,U+F146,U+F14A,U+F14D-F14E,U+F150-F152,U+F15B-F15C,U+F164-F165,U+F185-F186,U+F191-F192,U+F1AD,U+F1C1-F1C9,U+F1CD,U+F1D8,U+F1E3,U+F1EA,U+F1F6,U+F1F9,U+F20A,U+F247-F249,U+F24D,U+F254-F25B,U+F25D,U+F267,U+F271-F274,U+F279,U+F28B,U+F28D,U+F2B5-F2B6,U+F2B9,U+F2BB,U+F2BD,U+F2C1-F2C2,U+F2D0,U+F2D2,U+F2DC,U+F2ED,U+F328,U+F358-F35B,U+F3A5,U+F3D1,U+F410,U+F4AD;
+		}
+	</style>
+	<script type='text/javascript' src='wp-includes/js/jquery/jquery4a5f.js?ver=1.12.4-wp'></script>
+	<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+	<link rel='https://api.w.org/' href='index52f0.json?rest_route=/' />
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
+	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
+	<meta name="generator" content="WordPress 5.3.3" />
+	<link rel="canonical" href="registration.html" />
+	<link rel='shortlink' href='filehasmoved3.html?p=58' />
+	<link rel="alternate" type="application/json+oembed" href="index9cc5.json?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=http%3A%2F%2Fvps277519.vps.ovh.ca%2Fwordpress%2F%3Fpage_id%3D58" />
+	<link rel="alternate" type="text/xml+oembed" href="index3a2c.php?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=http%3A%2F%2Fvps277519.vps.ovh.ca%2Fwordpress%2F%3Fpage_id%3D58&amp;format=xml" />
 	<style type="text/css">
 		/* Colors */
-				
-				/* Logo */
-			.site-logo {
-											}
-						</style>
+
+		/* Logo */
+		.site-logo {
+		}
+	</style>
 	<link rel="icon" href="uploads/2020/01/cropped-logo2-1-32x32.jpg" sizes="32x32" />
-<link rel="icon" href="uploads/2020/01/cropped-logo2-1-192x192.jpg" sizes="192x192" />
-<link rel="apple-touch-icon-precomposed" href="uploads/2020/01/cropped-logo2-1-180x180.jpg" />
-<meta name="msapplication-TileImage" content="http://vps277519.vps.ovh.ca/wordpress/uploads/2020/01/cropped-logo2-1-270x270.jpg" />
+	<link rel="icon" href="uploads/2020/01/cropped-logo2-1-192x192.jpg" sizes="192x192" />
+	<link rel="apple-touch-icon-precomposed" href="uploads/2020/01/cropped-logo2-1-180x180.jpg" />
+	<meta name="msapplication-TileImage" content="http://vps277519.vps.ovh.ca/wordpress/uploads/2020/01/cropped-logo2-1-270x270.jpg" />
 </head>
 
 <body class="page-template-default page page-id-58 no-sidebar footer-0">
@@ -179,7 +151,13 @@ img.emoji {
 															<span class="frm_required">*</span>
 														</label>
 														<input type="tel" id="field_e6lis6" name="item_meta[4]" value="" data-reqmsg="This field cannot be blank." aria-required="true" data-invmsg="Subject is invalid" pattern="((\+\d{1,3}(-|.| )?\(?\d\)?(-| |.)?\d{1,5})|(\(?\d{2,6}\)?))(-|.| )?(\d{3,4})(-|.| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" />
-
+														<script src="uploads/js-tel/intlTelInput.js"></script>
+														<script>
+                                                            var input = document.querySelector("#field_e6lis6");
+															window.intlTelInput(input, {
+																// any initialisation options go here
+															});
+														</script>
 
 													</div>
 													<div id="frm_field_6_container" class="frm_form_field form-field  frm_required_field frm_top_container vertical_radio">
