@@ -111,19 +111,14 @@
 												<legend class="frm_screen_reader">Регистрация</legend>
 
 												<div class="frm_fields_container">
-													<input type="hidden" name="frm_action" value="create" />
-													<input type="hidden" name="form_id" value="1" />
-													<input type="hidden" name="frm_hide_fields_1" id="frm_hide_fields_1" value="" />
-													<input type="hidden" name="form_key" value="contact-form" />
-													<input type="hidden" name="item_meta[0]" value="" />
-													<input type="hidden" id="frm_submit_entry_1" name="frm_submit_entry_1" value="16ad909485" /><input type="hidden" name="_wp_http_referer" value="/wordpress/?page_id=58" /><label for="frm_verify_1" class="frm_screen_reader frm_hidden">If you are human, leave this field blank.</label>
+													
 													<input type="text" class="frm_hidden frm_verify" id="frm_verify_1" name="frm_verify" value="" />
 													<div id="frm_field_1_container" class="frm_form_field form-field  frm_required_field frm_top_container frm_first frm_half">
 														<label for="field_qh4icy" id="field_qh4icy_label" class="frm_primary_label">
 															Имя
 															<span class="frm_required">*</span>
 														</label>
-														<input type="text" id="field_qh4icy" name="item_meta[1]" value="" data-reqmsg="This field cannot be blank." aria-required="true" data-invmsg="Name is invalid" aria-describedby="frm_desc_field_qh4icy" />
+														<input type="text" id="field_qh4icy" name="first_name" value="" data-reqmsg="This field cannot be blank." aria-required="true" data-invmsg="Name is invalid" aria-describedby="frm_desc_field_qh4icy" />
 														<div class="frm_description" id="frm_desc_field_qh4icy">Имя</div>
 
 													</div>
@@ -132,7 +127,7 @@
 															Фамилия
 															<span class="frm_required">*</span>
 														</label>
-														<input type="text" id="field_ocfup1" name="item_meta[2]" value="" data-reqmsg="This field cannot be blank." aria-required="true" data-invmsg="Last is invalid" aria-describedby="frm_desc_field_ocfup1" />
+														<input type="text" id="field_ocfup1" name="second_name" value="" data-reqmsg="This field cannot be blank." aria-required="true" data-invmsg="Last is invalid" aria-describedby="frm_desc_field_ocfup1" />
 														<div class="frm_description" id="frm_desc_field_ocfup1">Фамилия</div>
 
 													</div>
@@ -150,10 +145,10 @@
 															Телефон
 															<span class="frm_required">*</span>
 														</label>
-														<input type="tel" id="field_e6lis6" name="item_meta[4]" value="" data-reqmsg="This field cannot be blank." aria-required="true" data-invmsg="Subject is invalid" pattern="((\+\d{1,3}(-|.| )?\(?\d\)?(-| |.)?\d{1,5})|(\(?\d{2,6}\)?))(-|.| )?(\d{3,4})(-|.| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" />
+														<input type="tel" id="field_e6lis6" name="phone_number" value="" data-reqmsg="This field cannot be blank." aria-required="true" data-invmsg="Subject is invalid" pattern="((\+\d{1,3}(-|.| )?\(?\d\)?(-| |.)?\d{1,5})|(\(?\d{2,6}\)?))(-|.| )?(\d{3,4})(-|.| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" />
 														<script src="uploads/js-tel/intlTelInput.js"></script>
 														<script>
-                                                            var input = document.querySelector("#field_e6lis6");
+                                                            var input = document.querySelector("#phone_number");
 															window.intlTelInput(input, {
 																// any initialisation options go here
 															});
@@ -168,13 +163,13 @@
 														<div class="frm_opt_container" aria-labelledby="field_o3zo9_label" role="group">
 															<div class="frm_radio" id="frm_radio_6-0">
 																<label for="field_o3zo9-0">
-																	<input type="radio" name="item_meta[6]" id="field_o3zo9-0" value="Да"
+																	<input type="radio" name="is_jewroot" id="field_o3zo9-0" value="yes"
 																		   data-reqmsg="This field cannot be blank." data-invmsg="У вас есть еврейские корни? (максимум бабушка или дедушка) is invalid" /> Да
 																</label>
 															</div>
 															<div class="frm_radio" id="frm_radio_6-1">
 																<label for="field_o3zo9-1">
-																	<input type="radio" name="item_meta[6]" id="field_o3zo9-1" value="Нет"
+																	<input type="radio" name="is_jewroot" id="field_o3zo9-1" value="no"
 																		   data-reqmsg="This field cannot be blank." data-invmsg="У вас есть еврейские корни? (максимум бабушка или дедушка) is invalid" /> Нет
 																</label>
 															</div>
@@ -188,7 +183,7 @@
 															<span class="frm_required"></span>
 														</label>
 														<input type="number" id="field_4ebr" onkeydown="javascript: return event.keyCode === 8 ||
-event.keyCode === 46 ? true : !isNaN(Number(event.key))" name="item_meta[7]" value="number" placeholder="дата рождения" data-invmsg="Number is invalid" min="1987" max="2004" step="any" />
+event.keyCode === 46 ? true : !isNaN(Number(event.key))" name="birth_date" value="number" placeholder="дата рождения" data-invmsg="Number is invalid" min="1980" max="2006" step="any" />
 
 
 													</div>
@@ -197,7 +192,7 @@ event.keyCode === 46 ? true : !isNaN(Number(event.key))" name="item_meta[7]" val
 															Откуда вы (город и страна)
 															<span class="frm_required"></span>
 														</label>
-														<input type="text" id="field_2rk2i" name="item_meta[9]" value="" data-invmsg="Text is invalid" />
+														<input type="text" id="field_2rk2i" name="city" value="" data-invmsg="Text is invalid" />
 
 
 													</div>

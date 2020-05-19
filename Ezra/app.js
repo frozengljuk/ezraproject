@@ -51,15 +51,34 @@ app.post("/lid", (req, res, next) => {
     // phone_number
     // email
     // city
-    // is_jewrut 
+    // is_jewroot 
 
+   
     var errors = []
-    if (!req.body.password) {
-        errors.push("No password specified");
-    }
     if (!req.body.email) {
-        errors.push("No email specified");
+        errors.push("Email required");
     }
+    if (!req.body.first_name) {
+        errors.push("First name required");
+    }
+    if (!req.body.second_name) {
+        errors.push("second_name required");
+    }
+    if (!req.body.city) {
+        errors.push("city name required");
+    }
+    if (!req.body.phone_number) {
+        errors.push("phone_number name required");
+    }
+    if (!req.body.birth_date) {
+        errors.push("birth_date name required");
+    }
+    if (!req.body.is_jewroot) {
+        errors.push("is_jewroot name required");
+    }
+    
+
+    //.....
     if (errors.length) {
         res.status(400).json({ "error": errors.join(",") });
         return;
