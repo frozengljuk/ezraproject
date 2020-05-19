@@ -83,25 +83,43 @@ app.post("/lid", (req, res, next) => {
         res.status(400).json({ "error": errors.join(",") });
         return;
     }
-
+  /**
     var data = {
         name: req.body.name,
         email: req.body.email,
         password: md5(req.body.password)
     }
-
-    var sql = 'INSERT INTO user (name, email, password) VALUES (?,?,?)'
-    var params = [data.name, data.email, data.password]
+  
+     *
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            first_name text,
+            second_name text,
+            phone_number text,
+            email text,
+            city text,
+            is_jewroot INTEGER*/
+    var sql = 'INSERT INTO lid (first_name, second_name, birth_date, phone_number, email, city, is_jewroot) VALUES (?,?,?,?,?,?,?)'
+    var params = [
+        req.body.first_name,
+        req.body.second_name,
+        req.body.birth_date,
+        req.body.phone_number,
+        req.body.email,
+        req.body.city,
+        req.body.is_jewroot
+        
+    ];
     db.run(sql, params, function (err, result) {
         if (err) {
             res.status(400).json({ "error": err.message })
             return;
         }
-        res.json({
-            "message": "success",
-            "data": data,
-            "id": this.lastID
-        })
+        //res.json({
+        //    "message": "success",
+        //    "data": data,
+        //    "id": this.lastID
+        //})
+        res.redirect("/thanx.html");
     });
 
 });

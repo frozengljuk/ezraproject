@@ -53,6 +53,9 @@
     <Content Include="wwwroot\faq.html" />
     <Content Include="wwwroot\about_us.html" />
     <Content Include="wwwroot\intlTelInput.css" />
+    <Content Include="wwwroot\thanx.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="wwwroot\registration.html" />
     <Content Include="wwwroot\plugins\formidable\fonts\s11-fpbea6.svg" />
     <Content Include="wwwroot\plugins\formidable\fonts\s11-fpbea6.ttf" />
