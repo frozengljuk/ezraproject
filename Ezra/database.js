@@ -18,7 +18,7 @@ let database = new sqlite3.Database(filename, (connectionError) => {
             phone_number text,
             email text,
             city text,
-            is_jewrut INTEGER
+            is_jewroot INTEGER
             )`,
             (createTableError) => {
                 if (createTableError) {
