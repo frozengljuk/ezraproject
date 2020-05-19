@@ -1,65 +1,212 @@
 
 function frmFrontFormJS() {
-    var action = ""; var jsErrors = []; function maybeShowLabel() { var $field = jQuery(this); var $label = $field.closest(".frm_inside_container").find(".frm_primary_label"); if ($field.val().length > 0) $label.addClass("frm_visible"); else $label.removeClass("frm_visible") } function getFieldId(field, fullID) {
-        var fieldName = ""; if (field instanceof jQuery) fieldName = field.attr("name"); else fieldName = field.name; if (typeof fieldName === "undefined") fieldName = ""; if (fieldName === "") {
+    var action = "";
+    var jsErrors = [];
+    function maybeShowLabel() {
+        var $field = jQuery(this);
+        var $label = $field.closest(".frm_inside_container").find(".frm_primary_label");
+        if ($field.val().length > 0) $label.addClass("frm_visible");
+        else $label.removeClass("frm_visible")
+    } function getFieldId(field, fullID) {
+        var fieldName = "";
+            if (field instanceof jQuery) fieldName = field.attr("name");
+        else fieldName = field.name;
+        if (typeof fieldName === "undefined") fieldName = "";
+        if (fieldName === "") {
             if (field instanceof jQuery) fieldName =
-                field.data("name"); else fieldName = field.getAttribute("data-name"); if (typeof fieldName === "undefined") fieldName = ""; if (fieldName !== "" && fieldName) return fieldName; return 0
-        } var nameParts = fieldName.replace("item_meta[", "").replace("[]", "").split("]"); if (nameParts.length < 1) return 0; nameParts = nameParts.filter(function (n) { return n !== "" }); var field_id = nameParts[0]; var isRepeating = false; if (nameParts.length === 1) return field_id; if (nameParts[1] === "[form" || nameParts[1] === "[row_ids") return 0; if (jQuery('input[name="item_meta[' +
-            field_id + '][form]"]').length) { field_id = nameParts[2].replace("[", ""); isRepeating = true } if ("other" === field_id) if (isRepeating) field_id = nameParts[3].replace("[", ""); else field_id = nameParts[1].replace("[", ""); if (fullID === true) if (field_id === nameParts[0]) field_id = field_id + "-" + nameParts[1].replace("[", ""); else field_id = field_id + "-" + nameParts[0] + "-" + nameParts[1].replace("[", ""); return field_id
-    } function disableSubmitButton($form) {
+                field.data("name");
+            else fieldName = field.getAttribute("data-name");
+            if (typeof fieldName === "undefined") fieldName = "";
+            if (fieldName !== "" && fieldName) return fieldName; return 0
+        }
+
+    //    var nameParts = fieldName.replace("item_meta[", "").replace("[]", "").split("]");
+    //    if (nameParts.length < 1)
+    //        return 0; nameParts = nameParts.filter(function (n) {
+    //            return n !== ""
+    //                                                             });
+    //            var field_id = nameParts[0];
+    //            var isRepeating = false;
+    //    if (nameParts.length === 1)
+    //        return field_id;
+    //    if (nameParts[1] === "[form" || nameParts[1] === "[row_ids")
+    //        return 0;
+    //    if (jQuery('input[name="item_meta[' +
+    //        field_id + '][form]"]').length) { field_id = nameParts[2].replace("[", ""); isRepeating = true }
+    //    if ("other" === field_id)
+    //        if (isRepeating) field_id = nameParts[3].replace("[", "");
+    //        else field_id = nameParts[1].replace("[", "");
+    //    if (fullID === true)
+    //        if (field_id === nameParts[0]) field_id = field_id + "-" + nameParts[1].replace("[", "");
+    //        else field_id = field_id + "-" + nameParts[0] + "-" + nameParts[1].replace("[", "");
+    //    return field_id
+
+    //}
+    function disableSubmitButton($form) {
         $form.find('input[type="submit"], input[type="button"], button[type="submit"]').attr("disabled",
             "disabled")
-    } function enableSubmitButton($form) { $form.find('input[type="submit"], input[type="button"], button[type="submit"]').removeAttr("disabled") } function validateForm(object) {
-        var errors = []; var requiredFields = jQuery(object).find(".frm_required_field:visible input, .frm_required_field:visible select, .frm_required_field:visible textarea").filter(":not(.frm_optional)"); if (requiredFields.length) for (var r = 0, rl = requiredFields.length; r < rl; r++)errors = checkRequiredField(requiredFields[r], errors); var emailFields =
-            jQuery(object).find("input[type=email]").filter(":visible"); var fields = jQuery(object).find("input,select,textarea"); if (fields.length) for (var n = 0, nl = fields.length; n < nl; n++) { var field = fields[n]; var value = field.value; if (value !== "") if (field.type === "hidden"); else if (field.type === "number") errors = checkNumberField(field, errors); else if (field.type === "email") errors = checkEmailField(field, errors, emailFields); else if (field.pattern !== null) errors = checkPatternField(field, errors) } errors = validateRecaptcha(object, errors);
+    }
+    function enableSubmitButton($form) { $form.find('input[type="submit"], input[type="button"], button[type="submit"]').removeAttr("disabled") }
+    function validateForm(object) {
+        var errors = [];
+        var requiredFields = jQuery(object).find(".frm_required_field:visible input, .frm_required_field:visible select, .frm_required_field:visible textarea").filter(":not(.frm_optional)");
+        if (requiredFields.length)
+            for (var r = 0, rl = requiredFields.length; r < rl; r++)errors = checkRequiredField(requiredFields[r], errors);
+        var emailFields =
+            jQuery(object).find("input[type=email]").filter(":visible");
+        var fields = jQuery(object).find("input,select,textarea");
+        if (fields.length) for (var n = 0, nl = fields.length; n < nl; n++) {
+            var field = fields[n];
+            var value = field.value;
+            if (value !== "")
+                if (field.type === "hidden");
+                else if (field.type === "number") errors = checkNumberField(field, errors);
+                else if (field.type === "email") errors = checkEmailField(field, errors, emailFields);
+                else if (field.pattern !== null) errors = checkPatternField(field, errors)
+        } errors = validateRecaptcha(object, errors);
         return errors
-    } function maybeValidateChange(field_id, field) { if (field.type === "url") maybeAddHttpToUrl(field); if (jQuery(field).closest("form").hasClass("frm_js_validate")) validateField(field_id, field) } function maybeAddHttpToUrl(field) { var url = field.value; var matches = url.match(/^(https?|ftps?|mailto|news|feed|telnet):/); if (field.value !== "" && matches === null) field.value = "http://" + url } function validateField(fieldId, field) {
-        var errors = []; var $fieldCont = jQuery(field).closest(".frm_form_field"); if ($fieldCont.hasClass("frm_required_field") &&
-            !jQuery(field).hasClass("frm_optional")) errors = checkRequiredField(field, errors); if (errors.length < 1) if (field.type === "email") { var emailFields = jQuery(field).closest("form").find("input[type=email]"); errors = checkEmailField(field, errors, emailFields) } else if (field.type === "number") errors = checkNumberField(field, errors); else if (field.pattern !== null) errors = checkPatternField(field, errors); removeFieldError($fieldCont); if (Object.keys(errors).length > 0) for (var key in errors) addFieldError($fieldCont, key, errors)
+    }
+        function maybeValidateChange(field_id, field) {
+            if (field.type === "url") maybeAddHttpToUrl(field);
+            if (jQuery(field).closest("form").hasClass("frm_js_validate")) validateField(field_id, field)
+        }
+        function maybeAddHttpToUrl(field) {
+            var url = field.value;
+            var matches = url.match(/^(https?|ftps?|mailto|news|feed|telnet):/);
+            if (field.value !== "" && matches === null) field.value = "http://" + url
+        }
+        function validateField(fieldId, field) {
+            var errors = [];
+            var $fieldCont = jQuery(field).closest(".frm_form_field");
+            if ($fieldCont.hasClass("frm_required_field") &&
+                !jQuery(field).hasClass("frm_optional")) errors = checkRequiredField(field, errors);
+            if (errors.length < 1)
+                if (field.type === "email") {
+                    var emailFields = jQuery(field).closest("form").find("input[type=email]"); errors = checkEmailField(field, errors, emailFields)
+                } else if (field.type === "number") errors = checkNumberField(field, errors);
+                else if (field.pattern !== null) errors = checkPatternField(field, errors); removeFieldError($fieldCont);
+            if (Object.keys(errors).length > 0)
+                for (var key in errors) addFieldError($fieldCont, key, errors)
     }
     function checkRequiredField(field, errors) {
-        var fileID = field.getAttribute("data-frmfile"); if (field.type === "hidden" && fileID === null) return errors; var val = ""; var fieldID = ""; if (field.type === "checkbox" || field.type === "radio") { var checkGroup = jQuery('input[name="' + field.name + '"]').closest(".frm_required_field").find("input:checked"); jQuery(checkGroup).each(function () { val = this.value }) } else if (field.type === "file" || fileID) {
+        var fileID = field.getAttribute("data-frmfile");
+        if (field.type === "hidden" && fileID === null)
+            return errors;
+        var val = "";
+
+        var fieldID = "";
+        if (field.type === "checkbox" || field.type === "radio") {
+            var checkGroup = jQuery('input[name="' + field.name + '"]').closest(".frm_required_field").find("input:checked"); jQuery(checkGroup).each(function () { val = this.value })
+        }
+        else if (field.type === "file" || fileID) {
             if (typeof fileID === "undefined") {
                 fileID = getFieldId(field, true); fileID = fileID.replace("file",
                     "")
-            } if (typeof errors[fileID] === "undefined") val = getFileVals(fileID); fieldID = fileID
-        } else {
-            var fieldClasses = field.className; if (fieldClasses.indexOf("frm_pos_none") !== -1) return errors; val = jQuery(field).val(); if (val === null) val = ""; else if (typeof val !== "string") { var tempVal = val; val = ""; for (var i = 0; i < tempVal.length; i++)if (tempVal[i] !== "") val = tempVal[i] } if (fieldClasses.indexOf("frm_other_input") === -1) fieldID = getFieldId(field, true); else fieldID = getFieldId(field, false); if (fieldClasses.indexOf("frm_time_select") !==
-                -1) fieldID = fieldID.replace("-H", "").replace("-m", ""); var placeholder = field.getAttribute("data-frmplaceholder"); if (placeholder !== null && val === placeholder) val = ""
-        } if (val === "") { if (fieldID === "") fieldID = getFieldId(field, true); if (!(fieldID in errors)) errors[fieldID] = getFieldValidationMessage(field, "data-reqmsg") } return errors
-    } function getFileVals(fileID) {
-        var val = ""; var fileFields = jQuery('input[name="file' + fileID + '"], input[name="file' + fileID + '[]"], input[name^="item_meta[' + fileID + ']"]'); fileFields.each(function () {
-            if (val ===
-                "") val = this.value
-        }); return val
-    } function checkEmailField(field, errors, emailFields) {
-        var emailAddress = field.value; var fieldID = getFieldId(field, true); if (fieldID in errors) return errors; var isConf = fieldID.indexOf("conf_") === 0; if (emailAddress !== "" || isConf) {
-            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i; var invalidMsg = getFieldValidationMessage(field, "data-invmsg"); if (emailAddress !== "" && re.test(emailAddress) ===
-                false) { errors[fieldID] = invalidMsg; if (isConf) errors[fieldID.replace("conf_", "")] = "" } else if (isConf) { var confName = field.name.replace("conf_", ""); var match = emailFields.filter('[name="' + confName + '"]').val(); if (match !== emailAddress) { errors[fieldID] = ""; errors[fieldID.replace("conf_", "")] = "" } }
+            }
+            if (typeof errors[fileID] === "undefined") val = getFileVals(fileID); fieldID = fileID
+        }
+        else {
+            var fieldClasses = field.className;
+            if (fieldClasses.indexOf("frm_pos_none") !== -1)
+                return errors; val = jQuery(field).val();
+            if (val === null) val = "";
+            else if (typeof val !== "string") {
+                var tempVal = val; val = "";
+                for (var i = 0; i < tempVal.length; i++)
+                    if (tempVal[i] !== "") val = tempVal[i]
+                                                       }
+
+            if (fieldClasses.indexOf("frm_other_input") === -1) fieldID = getFieldId(field, true);
+            else fieldID = getFieldId(field, false);
+            if (fieldClasses.indexOf("frm_time_select") !== -1) fieldID = fieldID.replace("-H", "").replace("-m", "");
+            var placeholder = field.getAttribute("data-frmplaceholder");
+            if (placeholder !== null && val === placeholder) val = ""
+        }
+        if (val === "") {
+            if (fieldID === "") fieldID = getFieldId(field, true);
+            if (!(fieldID in errors)) errors[fieldID] = getFieldValidationMessage(field, "data-reqmsg")
         } return errors
+        }
+        //function getFileVals(fileID) {
+        //    var val = "";
+        //    var fileFields = jQuery('input[name="file' + fileID + '"], input[name="file' + fileID + '[]"], input[name^="item_meta[' + fileID + ']"]'); fileFields.each(function () {
+        //    if (val ===
+        //        "") val = this.value
+        //}); return val
+        }
+        function checkEmailField(field, errors, emailFields) {
+        var emailAddress = field.value;
+        var fieldID = getFieldId(field, true);
+        if (fieldID in errors)
+            return errors;
+        var isConf = fieldID.indexOf("conf_") === 0;
+        if (emailAddress !== "" || isConf) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i;
+            var invalidMsg = getFieldValidationMessage(field, "data-invmsg");
+            if (emailAddress !== "" && re.test(emailAddress) === false) {
+                errors[fieldID] = invalidMsg;
+                if (isConf) errors[fieldID.replace("conf_", "")] = ""
+            } else if (isConf) {
+                var confName = field.name.replace("conf_", "");
+                var match = emailFields.filter('[name="' + confName + '"]').val();
+                if (match !== emailAddress) { errors[fieldID] = ""; errors[fieldID.replace("conf_", "")] = "" }
+            }
+            } return errors
+
     } function checkNumberField(field, errors) {
         var number = field.value; if (number !== "" && isNaN(number / 1) !== false) {
-            var fieldID = getFieldId(field, true); if (!(fieldID in errors)) errors[fieldID] = getFieldValidationMessage(field,
+            var fieldID = getFieldId(field, true);
+            if (!(fieldID in errors)) errors[fieldID] = getFieldValidationMessage(field,
                 "data-invmsg")
         } return errors
-    } function checkPatternField(field, errors) { var text = field.value; var format = getFieldValidationMessage(field, "pattern"); if (format !== "" && text !== "") { var fieldID = getFieldId(field, true); if (!(fieldID in errors)) { format = new RegExp("^" + format + "$", "i"); if (format.test(text) === false) errors[fieldID] = getFieldValidationMessage(field, "data-invmsg") } } return errors } function hasInvisibleRecaptcha(object) {
-        if (isGoingToPrevPage(object)) return false; var recaptcha = jQuery(object).find('.frm-g-recaptcha[data-size="invisible"], .g-recaptcha[data-size="invisible"]');
-        if (recaptcha.length) { var recaptchaID = recaptcha.data("rid"); var alreadyChecked = grecaptcha.getResponse(recaptchaID); if (alreadyChecked.length === 0) return recaptcha; else return false } else return false
-    } function executeInvisibleRecaptcha(invisibleRecaptcha) { var recaptchaID = invisibleRecaptcha.data("rid"); grecaptcha.reset(recaptchaID); grecaptcha.execute(recaptchaID) } function validateRecaptcha(form, errors) {
-        var $recaptcha = jQuery(form).find(".frm-g-recaptcha"); if ($recaptcha.length) {
-            var recaptchaID = $recaptcha.data("rid");
-            var response = grecaptcha.getResponse(recaptchaID); if (response.length === 0) { var fieldContainer = $recaptcha.closest(".frm_form_field"); var fieldID = fieldContainer.attr("id").replace("frm_field_", "").replace("_container", ""); errors[fieldID] = "" }
+    }
+
+    function checkPatternField(field, errors) {
+        var text = field.value;
+        var format = getFieldValidationMessage(field, "pattern");
+        if (format !== "" && text !== "") {
+            var fieldID = getFieldId(field, true);
+            if (!(fieldID in errors)) {
+                format = new RegExp("^" + format + "$", "i");
+                if (format.test(text) === false) errors[fieldID] = getFieldValidationMessage(field, "data-invmsg")
+            }
         } return errors
-    } function getFieldValidationMessage(field, messageType) { var msg = field.getAttribute(messageType); if (msg === null) msg = ""; return msg } function shouldJSValidate(object) {
-        var validate = jQuery(object).hasClass("frm_js_validate"); if (validate && typeof frmProForm !==
-            "undefined" && (frmProForm.savingDraft(object) || frmProForm.goingToPreviousPage(object))) validate = false; return validate
+    //} function hasInvisibleRecaptcha(object) {
+    //    if (isGoingToPrevPage(object)) return false;
+    //    var recaptcha = jQuery(object).find('.frm-g-recaptcha[data-size="invisible"], .g-recaptcha[data-size="invisible"]');
+    //    if (recaptcha.length) { var recaptchaID = recaptcha.data("rid"); var alreadyChecked = grecaptcha.getResponse(recaptchaID); if (alreadyChecked.length === 0) return recaptcha; else return false } else return false
+    //} function executeInvisibleRecaptcha(invisibleRecaptcha) { var recaptchaID = invisibleRecaptcha.data("rid"); grecaptcha.reset(recaptchaID); grecaptcha.execute(recaptchaID) } function validateRecaptcha(form, errors) {
+    //    var $recaptcha = jQuery(form).find(".frm-g-recaptcha"); if ($recaptcha.length) {
+    //        var recaptchaID = $recaptcha.data("rid");
+    //        var response = grecaptcha.getResponse(recaptchaID); if (response.length === 0) { var fieldContainer = $recaptcha.closest(".frm_form_field"); var fieldID = fieldContainer.attr("id").replace("frm_field_", "").replace("_container", ""); errors[fieldID] = "" }
+    //    } return errors
+        }
+        function getFieldValidationMessage(field, messageType) {
+            var msg = field.getAttribute(messageType);
+            if (msg === null) msg = ""; return msg
+        }
+        function shouldJSValidate(object) {
+            var validate = jQuery(object).hasClass("frm_js_validate");
+            if (validate && typeof frmProForm !==
+                "undefined" && (frmProForm.savingDraft(object) || frmProForm.goingToPreviousPage(object))) validate = false;
+            return validate
     } function getFormErrors(object, action) {
-        if (typeof action === "undefined") jQuery(object).find('input[name="frm_action"]').val(); var fieldset = jQuery(object).find(".frm_form_field"); fieldset.addClass("frm_doing_ajax"); jQuery.ajax({
+        if (typeof action === "undefined") jQuery(object).find('input[name="frm_action"]').val();
+            var fieldset = jQuery(object).find(".frm_form_field"); fieldset.addClass("frm_doing_ajax"); jQuery.ajax({
             type: "POST", url: frm_js.ajax_url, data: jQuery(object).serialize() + "&action=frm_entries_" + action + "&nonce=" + frm_js.nonce, success: function (response) {
                 var defaultResponse =
-                    { "content": "", "errors": {}, "pass": false }; if (response === null) response = defaultResponse; response = response.replace(/^\s+|\s+$/g, ""); if (response.indexOf("{") === 0) response = jQuery.parseJSON(response); else response = defaultResponse; if (typeof response.redirect !== "undefined") { jQuery(document).trigger("frmBeforeFormRedirect", [object, response]); window.location = response.redirect } else if (response.content !== "") {
-                        removeSubmitLoading(jQuery(object)); if (frm_js.offset != -1) frmFrontForm.scrollMsg(jQuery(object), false); var formID =
-                            jQuery(object).find('input[name="form_id"]').val(); response.content = response.content.replace(/ frm_pro_form /g, " frm_pro_form frm_no_hide "); var replaceContent = jQuery(object).closest(".frm_forms"); removeAddedScripts(replaceContent, formID); replaceContent.replaceWith(response.content); addUrlParam(response); if (typeof frmThemeOverride_frmAfterSubmit === "function") {
+                        { "content": "", "errors": {}, "pass": false };
+                    if (response === null) response = defaultResponse; response = response.replace(/^\s+|\s+$/g, "");
+                    if (response.indexOf("{") === 0) response = jQuery.parseJSON(response);
+                    else response = defaultResponse;
+                    if (typeof response.redirect !== "undefined") { jQuery(document).trigger("frmBeforeFormRedirect", [object, response]); window.location = response.redirect }
+                    else if (response.content !== "") {
+                        removeSubmitLoading(jQuery(object));
+                        if (frm_js.offset != -1) frmFrontForm.scrollMsg(jQuery(object), false);
+                        var formID =
+                            jQuery(object).find('input[name="form_id"]').val(); response.content = response.content.replace(/ frm_pro_form /g, " frm_pro_form frm_no_hide ");
+                        var replaceContent = jQuery(object).closest(".frm_forms"); removeAddedScripts(replaceContent, formID); replaceContent.replaceWith(response.content); addUrlParam(response);
+                        if (typeof frmThemeOverride_frmAfterSubmit === "function") {
                                 var pageOrder = jQuery('input[name="frm_page_order_' + formID + '"]').val(); var formReturned = jQuery(response.content).find('input[name="form_id"]').val();
                                 frmThemeOverride_frmAfterSubmit(formReturned, pageOrder, response.content, object)
                             } afterFormSubmitted(object, response)
@@ -121,7 +268,10 @@ function frmFrontFormJS() {
         } function addKeysFallbackForIE8() { if (!Object.keys) Object.keys = function (obj) { var keys = []; for (var i in obj) if (obj.hasOwnProperty(i)) keys.push(i); return keys } } return {
             init: function () {
                 jQuery(document).off("submit.formidable", ".frm-show-form"); jQuery(document).on("submit.formidable", ".frm-show-form",
-                    frmFrontForm.submitForm); jQuery(".frm-show-form input[onblur], .frm-show-form textarea[onblur]").each(function () { if (jQuery(this).val() === "") jQuery(this).blur() }); jQuery(document).on("focus", ".frm_toggle_default", clearDefault); jQuery(document).on("blur", ".frm_toggle_default", replaceDefault); jQuery(".frm_toggle_default").blur(); jQuery(document.getElementById("frm_resend_email")).click(resendEmail); jQuery(document).on("change", '.frm-show-form input[name^="item_meta"], .frm-show-form select[name^="item_meta"], .frm-show-form textarea[name^="item_meta"]',
+                    frmFrontForm.submitForm); jQuery(".frm-show-form input[onblur], .frm-show-form textarea[onblur]").each(function () {
+                        if (jQuery(this).val() === "") jQuery(this).blur()
+                    });
+                jQuery(document).on("focus", ".frm_toggle_default", clearDefault); jQuery(document).on("blur", ".frm_toggle_default", replaceDefault); jQuery(".frm_toggle_default").blur(); jQuery(document.getElementById("frm_resend_email")).click(resendEmail); jQuery(document).on("change", '.frm-show-form input[name], .frm-show-form select[name], .frm-show-form textarea[name]',
                         frmFrontForm.fieldValueChanged); jQuery(document).on("change keyup", ".frm-show-form .frm_inside_container input, .frm-show-form .frm_inside_container select, .frm-show-form .frm_inside_container textarea", maybeShowLabel); jQuery(document).on("click", "a[data-frmconfirm]", confirmClick); jQuery("a[data-frmtoggle]").click(toggleDiv); addIndexOfFallbackForIE8(); addTrimFallbackForIE8(); addFilterFallbackForIE8(); addKeysFallbackForIE8()
             }, getFieldId: function (field, fullID) { return getFieldId(field, fullID) }, renderRecaptcha: function (captcha) {
                 var size =

@@ -1255,6 +1255,67 @@ select.frm_loading_lookup {
     }
 }
 
+#registration_form {
+    width: auto;
+    background: #fff;
+    padding: 15px;
+    margin: 3px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    border: 1px grey;
+}
+
+.in_pl {
+    width: 90%;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0,0,0,.2) inset;
+    background: #fff;
+}
+
+    .in_pl:focus {
+        background: #fff;
+    }
+
+#sub_f {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 0 2px 1px rgba(0,0,0,.2);
+    background: #cccccc;
+    color: #333;
+    cursor: pointer;
+}
+
+    #sub_f:hover {
+        background: #666666;
+    }
+
+.fl_fr {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    color: #333;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 10px;
+}
+
+#messenger {
+    text-align: center;
+    display: none;
+    color: #f00;
+    margin: 15px 0;
+}
+
+.notvalid {
+    background: rgba(255,0,0,.2);
+}
+
 @media only screen and (max-width: 600px) {
     .frm_section_heading > .frm_form_field, .frm_fields_container > .frm_submit, .frm_grid_container > .frm_form_field, .frm_fields_container > .frm_form_field {
         grid-column: 1 / span 12 !important;

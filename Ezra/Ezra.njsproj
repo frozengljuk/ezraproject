@@ -53,6 +53,9 @@
     <Content Include="wwwroot\faq.html" />
     <Content Include="wwwroot\about_us.html" />
     <Content Include="wwwroot\intlTelInput.css" />
+    <Content Include="wwwroot\JavaScript.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="wwwroot\thanx.html">
       <SubType>Code</SubType>
     </Content>
